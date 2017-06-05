@@ -1,0 +1,33 @@
+<form>
+	<div class="form-group">
+      	<button type="submit" class="btn btn-default" ng-click='postAdminData()'>{{ old_id ? 'Update' : 'Save' }}</button>
+ 	</div>
+	<h4>Add Administration:</h4>
+	<div class="form-group">
+		<label for="adName">Name:</label>
+			<input type="text" class="form-control" id="adName" placeholder="Name" ng-value="old_name" ng-model="adName" required>
+	</div>
+	<div class="form-group">
+		<label for="adPhone">Phone:</label>
+			<input type="text" class="form-control" id="adPhone" placeholder="Phone" ng-value="old_phone" ng-model="adPhone" required>
+	</div>
+	<div class="form-group">
+		<label for="adEmail">Email:</label>
+			<input type="email" class="form-control" id="adEmail" placeholder="Email" ng-value="old_email" ng-model="adEmail" required>
+	</div>
+	<div class="form-group">
+		<label for="adImage">File input</label>
+		 	<input ng-model="form.image" type="file" class="form-control input-md" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" >
+  			<img ng-src="{{image_source}}" class="upload-img">
+	</div>
+	<label for="adRole_id">Role:</label>
+		<select class="form-control" ng-model="adRole_id">
+  			<option ng-if="sessionData.role_id == 1" value="1">Owner</option>
+  			<option value="2">Manager</option>
+  			<option value="3">Sales</option>
+		</select>
+	<div class="form-group">
+		<label for="adPassword">Password:</label>
+			<input type="text" class="form-control" id="adPassword" placeholder="Password" ng-model="adPassword" required>
+	</div>	
+</form>

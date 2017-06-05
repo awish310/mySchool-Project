@@ -1,0 +1,1 @@
+var schoolApp = angular.module("schoolApp", ['ui.router']);

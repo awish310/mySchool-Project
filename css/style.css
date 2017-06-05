@@ -1,0 +1,88 @@
+:root {
+	--body-height: 100vh;
+	--header-height: 10vh;
+}
+
+
+body {
+	height: var(--body-height);
+	background-image: url(https://st.depositphotos.com/1005549/2150/v/950/depositphotos_21506507-stock-illustration-binary-code-background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
+header {
+	height: var(--header-height);
+}
+
+main {
+	height: calc(var(--body-height) - var(--header-height)); 
+}
+
+.row {
+	margin: 0;
+}
+
+.aside {
+	overflow-y: scroll;
+	max-height: calc(var(--body-height) - var(--header-height) - 10px);
+}
+
+.aside::-webkit-scrollbar { 
+    display: none; 
+}
+
+.row-horizon::-webkit-scrollbar { 
+    display: none; 
+}
+
+.aside_list h3 {
+	margin: 0;
+	font-weight: bold;
+}
+
+.aside_list {
+	padding: 0;
+}
+
+.form-group {
+	margin: 0;
+}
+
+.aside .list-unstyled li {
+	max-height: 100px;
+	box-sizing: border-box;
+	word-wrap: break-word;
+}
+
+.jumbotron {
+	background-color: #fff;
+}
+
+.read_details {
+	font-size: 2.2rem;
+}
+
+.read_details span {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.horizional_thumbnail {
+	margin-bottom: 0;
+}
+
+.thumbnail .caption {
+	padding: 0;
+}
+
+
+.caption-text {
+	word-wrap: break-word;
+}
+
+.upload-img {
+	width:70px;
+	height:70px;
+}

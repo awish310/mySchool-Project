@@ -1,0 +1,60 @@
+<div class="col-md-4 hidden-xs hidden-sm">
+	<div class="col-md-12 aside aside_list hidden-xs hidden-sm">
+		<div class="row aside_list_header_cont text-center">
+			<h3 class="col-md-10">Admins</h3>
+			<a class="btn btn-default col-md-2" ui-sref="admin.insert-ad"><span class="glyphicon glyphicon-plus"></span></a>
+			<label class="col-md-12">
+				<input type="text" class="form-control" placeholder="Search Admin" ng-model="searchAdmin">
+			</label>
+		</div>	
+		<ul class="list-unstyled hidden-xs hidden-sm" ng-repeat="admin in adminData | filter:searchAdmin">
+			<li class="hidden-xs hidden-sm">
+			  	<a ui-sref="admin.read-ad({id:admin.id})">
+					<div class="row" ng-hide="admin.role == 'owner' && sessionData.role_id == 2">
+					  	<div class="col-md-12">
+					    	<div class="thumbnail">
+					      		<img src="./php/uploads/{{admin.image}}" alt="...">
+					      		<div class="caption text-center" class="col-md-8">
+						  			<ul class="list-unstyled">
+						  				<li class="text-capitalize">{{admin.name}}</li>
+						  				<li>{{admin.email}}</li>
+						  				<li>{{admin.phone}}</li>
+						  				<li class="text-capitalize">{{admin.role}}</li>
+						  			</ul>
+						  		</div>
+					    	</div>
+					  	</div>
+					</div>
+			  	</a>
+			</li>
+		</ul>
+	</div>	
+</div>
+
+<!-- responsive View -->
+
+<div class="row visible-xs visible-sm">
+	<div class="row">
+		<a class="btn btn-default col-xs-4 col-sm-4" ui-sref="admin.insert-ad"><span class="glyphicon glyphicon-plus"></span></a>
+		<label class="col-xs-8 col-sm-8">
+			<input type="text" class="form-control" placeholder="Search Admin" ng-model="searchAdmin">
+		</label>
+	</div>
+	<div class="row row-horizon visible-xs visible-sm" ng-hide="admin.role == 'owner' && sessionData.role_id == 2">
+		<a class="col-xs-3 col-sm-3" ui-sref="admin.read-ad({id:admin.id})" ng-repeat="admin in adminData | filter:searchAdmin">
+	    	<div class="thumbnail horizional_thumbnail">
+	      		<img src="./php/uploads/{{admin.image}}" alt="...">
+	      		<div class="caption text-center" class="col-xs-8 col-sm-8">
+		  			<ul class="list-unstyled">
+		  				<li class="text-capitalize caption-text">{{admin.name}}</li>
+		  				<li class="text-capitalize caption-text">{{admin.role}}</li>
+		  			</ul>
+		  		</div>
+	    	</div>			
+	  	</a>
+	</div>
+</div>
+
+<div class="col-md-8 col-xs-12 col-sm-12" ui-view></div>
+
+		  		

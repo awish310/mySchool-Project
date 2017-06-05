@@ -1,0 +1,27 @@
+<form class="stForm">
+	<div class="form-group">
+      	<button type="submit" class="btn btn-default" ng-click='postStudentData()'>{{ old_id ? 'Update' : 'Save' }}</button>
+ 	</div>
+	<h3>Add Student:</h3>
+	<div class="form-group">
+		<label for="stName">Name:</label>
+			<input type="text" class="form-control" id="stName" placeholder="Name" ng-value="old_name" ng-model="stName">
+	</div>
+	<div class="form-group">
+		<label for="stPhone">Phone:</label>
+			<input type="text" class="form-control" id="stPhone" placeholder="Phone" ng-value="old_phone" ng-model="stPhone">
+	</div>
+	<div class="form-group">
+		<label for="stEmail">Email:</label>
+			<input type="email" class="form-control" id="stEmail" placeholder="Email" ng-value="old_email" ng-model="stEmail">
+	</div>
+	<div class="form-group">
+		<label for="stImage">File input</label>
+			<input ng-model="form.image" type="file" class="form-control input-md" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" >
+	  		<img ng-src="{{image_source}}" class="upload-img">
+	</div>
+	<label for="stCourse_id">Course:</label>
+		<select id="stCourse_id" class="form-control" ng-model="stCourse_id">
+	  		<option id="stCourse_id" ng-repeat="course in courseData" value="{{course.id}}">{{course.name}}</option>
+	  	</select>	
+</form>
